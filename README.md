@@ -86,5 +86,6 @@ mipo 王老师交给我们的mvc精简点对点控制跳转自定义框架，特
 qq:1092017732<br/>
 blog:http://blog.163.com/mg_blog/<br/>
 gitoschina:http://git.oschina.net/mgang<br/>
-github:https://github.com/mg0324
+github:https://github.com/mg0324<br/>
+演示页：http://mg0324.github.io/FrameworkServlet
 		
