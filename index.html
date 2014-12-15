@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Frameworkservlet by mg0324</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Frameworkservlet</h1>
+        <p class="header">点对点的servlet控制跳转</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/mg0324/FrameworkServlet/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/mg0324/FrameworkServlet/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/mg0324/FrameworkServlet">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/mg0324">mg0324</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="frameworkservlet" class="anchor" href="#frameworkservlet" aria-hidden="true"><span class="octicon octicon-link"></span></a>FrameworkServlet</h1>
+
+<h2>
+<a id="快速入门" class="anchor" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>快速入门</h2>
+
+<p>1.导入frameworkServlet.jar包到自己的工程中<br>
+2.编写TestServlet类继承FrameworkServlet.<br>
+使用servlet3.0的注解配置servlet，在界面上只需要传入action=test1，则调用test1方法来处理请求。</p>
+
+<pre><code>package room.mgang.test;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import room.mgang.web.common.servlet.FrameworkServlet;
+@WebServlet("/test.mg")
+public class TestServlet extends FrameworkServlet{
+
+    private static final long serialVersionUID = 1L;
+    /**
+     * test1方法
+     * @param req
+     * @param res
+     * @return 跳转到test1.html
+     */
+    public String test1(HttpServletRequest req,HttpServletResponse res){
+
+        return "test1.html";
+    }
+
+    /**
+     * test2方法
+     * @param req
+     * @param res
+     * @return 跳转到test2.html
+     */
+    public String test2(HttpServletRequest req,HttpServletResponse res){
+
+        return "test2.html";
+    }
+
+}
+</code></pre>
+
+<p>3.在webContent或者webapp下建立三个html页面，用来跳转。<br></p>
+
+<h2>
+<a id="indexhtml" class="anchor" href="#indexhtml" aria-hidden="true"><span class="octicon octicon-link"></span></a>index.html</h2>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;index页面&lt;/title&gt;
+        &lt;meta charset="utf-8"/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        测试FrameworkServlet&lt;br/&gt;
+        &lt;a href="test.mg?action=test1"&gt;测试test1方法&lt;/a&gt;&lt;br/&gt;
+        &lt;a href="test.mg?action=test2"&gt;测试test2方法&lt;/a&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>
+<a id="test1html" class="anchor" href="#test1html" aria-hidden="true"><span class="octicon octicon-link"></span></a>test1.html</h2>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;test1页面&lt;/title&gt;
+        &lt;meta charset="utf-8"/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        test1界面。
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>
+<a id="test2html" class="anchor" href="#test2html" aria-hidden="true"><span class="octicon octicon-link"></span></a>test2.html</h2>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;test2页面&lt;/title&gt;
+        &lt;meta charset="utf-8"/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        test2界面。
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<hr>
+
+<p>测试通过</p>
+
+<h2>
+<a id="about-this" class="anchor" href="#about-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>about this</h2>
+
+<p>mipo 王老师交给我们的mvc精简点对点控制跳转自定义框架，特此分享。<br>
+qq:1092017732<br>
+blog:<a href="http://blog.163.com/mg_blog/">http://blog.163.com/mg_blog/</a><br>
+gitoschina:<a href="http://git.oschina.net/mgang">http://git.oschina.net/mgang</a><br>
+github:<a href="https://github.com/mg0324">https://github.com/mg0324</a></p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
